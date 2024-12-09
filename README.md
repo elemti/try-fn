@@ -1,4 +1,4 @@
-# tryFn Utility Library
+# tryFn
 
 A utility library for handling synchronous and asynchronous operations with simplified error handling.
 
@@ -7,7 +7,7 @@ A utility library for handling synchronous and asynchronous operations with simp
 Add the library to your project:
 
 ```bash
-npm install try-fn
+npm install @elemti/try-fn
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install try-fn
 #### Synchronous Function
 
 ```ts
-import { tryFn } from "try-fn";
+import { tryFn } from "@elemti/try-fn";
 
 const [err, res] = tryFn(() => canThrow());
 if (err !== null) return console.error(err);
@@ -27,7 +27,7 @@ console.log(res); // `res` is guaranteed to be not undefined here
 #### Asynchronous Function
 
 ```ts
-import { tryFn } from "try-fn";
+import { tryFn } from "@elemti/try-fn";
 
 const [err, res] = await tryFn(async () => await canThrow());
 if (err !== null) return console.error(err);
@@ -39,7 +39,7 @@ console.log(res); // `res` is guaranteed to be not undefined here
 If you have a promise directly, use `tryPromise` for cleaner syntax:
 
 ```ts
-import { tryPromise } from "try-fn";
+import { tryPromise } from "@elemti/try-fn";
 
 const [err, res] = await tryPromise(somePromise);
 if (err !== null) return console.error(err);
